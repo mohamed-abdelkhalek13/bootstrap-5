@@ -1,0 +1,504 @@
+:root {
+    --dark-color :#19283f;
+    --green-color :#33d1cc;
+    --red-color: #ff3150;
+    --yellow-color: #ffc400;
+    --section-color: #eff7fa;
+
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+font-family: 'Work Sans', sans-serif;
+}
+
+/* start overlay */
+
+body div.overlay {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2579838a;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    left: 0;
+    bottom: 0;
+}
+
+body div div.login{
+border: 2px solid var(--red-color);
+border-radius: 30px;
+background-color: var(--dark-color);
+width: 60%;
+height: 60%;
+transition: 1s;
+z-index: 1001;
+}
+
+body .login .cancel,
+body .login .submit {
+color: var(--yellow-color);
+background-color: var(--red-color);
+width: 70px;
+height: 40px;
+display: inline-block;
+text-align: center;
+align-items: center;
+border-radius: 10px;
+margin: auto 5px;
+padding: 5px;
+
+}
+
+
+
+body .login .submit:hover {
+    cursor: pointer;
+    color: var(--green-color);
+}
+body .login .cancel:hover {
+    cursor: pointer;
+    color: var(--green-color);
+}
+
+
+
+
+
+
+
+
+body div .login form:first-child {
+    color: var(--red-color);
+    margin-top: 100px;
+    margin-left: 20px;
+    display: block;
+    margin-left: 50px;
+    font-size: large;
+    font-weight: bold;
+}
+
+
+body div div form .user {
+    padding: 10px;
+    margin-top: 5px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--red-color);
+    margin-bottom: 40px;
+
+    display: block;
+    width: 70%;
+    color: var(--yellow-color);
+}
+body div .login form {
+    width: 100%;
+    height: 100%;
+
+}
+
+
+
+
+/* end overlay */
+
+
+.navbar {
+    background-color: var(--dark-color);
+    z-index: 999;
+}
+
+
+
+.search .magnifyer:hover {
+    cursor: pointer;
+}
+.navbar input[type="text"]{
+    border: none;
+    border-bottom: 1px solid var(--green-color);
+    display: none;
+    transition: .5s;
+}
+
+.navbar input[type="text"].active {
+    display: inline-block;
+    
+}
+
+.navbar .navbar-nav .nav-link {
+    color: white;
+}
+
+
+.navbar .navbar-nav .nav-link.active, 
+.navbar .navbar-nav .nav-link:hover {
+    color: var(--green-color);
+}
+
+.navbar .navbar-toggler {
+    font-size: x-large;
+    border: 1px solid white;
+}
+
+.navbar .navbar-toggler:focus{
+box-shadow: none;
+}
+.navbar .navbar-toggler .bar {
+    color: white;
+}
+
+.navbar .search {
+    border-left: 1px solid var(--green-color);
+}
+
+.navbar .search svg {
+    color: var(--green-color);
+}
+
+
+/* start landing  */
+.landing{
+    background-color: var(--dark-color);
+    min-height: calc(100vh - 72px);
+    flex-wrap: wrap;
+
+}
+.landing .text-center{
+    margin: 100px;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.landing .back{
+    transition: 2s;
+    animation-name: floating;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    transition: 4s;
+    animation-timing-function: linear;
+}
+.landing .back ul{
+    list-style: none;
+    display: block;
+    transform: skewY(-15deg);
+
+}
+
+@keyframes floating {
+    0% {transform:translateY(-10%);}
+    25% {transform:translateY(0);}
+    50% {transform:translateY(10%);}
+    75% {transform:translateY(0);}
+    100% {transform:translateY(-10%);}
+}
+.landing .back ul li{
+    padding-left: 10px;
+    background-color: var(--red-color);
+    height: 80px;
+    width: 200px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    color: var(--yellow-color);
+    font-weight: bold;
+    font-size: large;
+    position: relative;
+    transition: 0.5s;
+    border: 1px solid var(--dark-color);
+    margin-left: 40px;
+}
+
+.landing .back ul li:hover::before,
+.landing .back ul li:hover::after{
+    cursor: pointer;
+    background-color: var(--green-color);
+}
+.landing .back ul li:hover{
+    cursor: pointer;
+    background-color: var(--green-color);
+    transform: translateX(-50px);
+}
+
+
+.landing .back ul li::before {
+    position: absolute;
+    content: "";
+    background-color: var(--red-color);
+    width: 80px;
+    height: 80px;
+    left: -80px;
+    transform: skewY(45deg);
+    top: 0;
+    transition: 0.5s;
+    transform-origin: right;
+    border: 1px solid var(--dark-color);
+    animation-name: floating;
+
+}
+
+
+
+.landing .back ul li::after {
+    position: absolute;
+    content: "";
+    background-color: var(--red-color);
+    width: 200px;
+    height: 80px;
+    left: 0;
+    transform: skewx(45deg);
+    top: -80px;
+    transition: 0.5s;
+    transform-origin: bottom;
+    border: 1px solid var(--dark-color);
+
+}
+
+.landing .back ul li:first-child {
+    z-index: 3;
+}
+.landing .back ul li:nth-child(2) {
+    z-index: 2;
+}
+.landing .back ul li:last-child {
+    z-index: 1;
+}
+.landing .back ul li:last-child::after {
+    box-shadow: -180px 180px 20px rgba(0, 0, 0, 0.5) ;
+
+}
+
+
+h1 {
+    margin: 0;
+    font-size: xxx-large;
+}
+
+.main-btn {
+    background-color: var(--red-color);
+    color: var(--yellow-color);
+}
+
+/*end landing  */
+
+/* start features  */
+.main-title::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 2px;
+    background-color: var(--green-color);
+}
+
+.features .icon-holder{
+    height: 200px;
+}
+
+.features .icon-holder .pen{
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--green-color);
+}
+.features .icon-holder .number{
+color: var(--section-color);
+}
+.row .feat h3{
+    color: var(--yellow-color);
+}
+.row .feat:hover{
+    cursor: pointer;
+    border: 1px solid var(--green-color);
+}
+/* end features  */
+/* start our work  */
+
+.our-work {
+    background-color: var(--section-color);
+
+}
+
+.our-work li.active {
+    background-color: var(--red-color);
+    color: var(--yellow-color);
+    border-radius: 4px;
+}
+.our-work ul li {
+    padding: 5px 15px;
+    margin: 5px;
+}
+
+.our-work ul li:hover {
+    cursor: pointer;
+}
+
+.our-work ul li:not(.active):hover {
+    color: var(--red-color);
+}
+
+
+.our-work .img-fluid:hover {
+cursor: pointer;
+border:1px solid var(--red-color) ;
+transform: translate(2px, 2px);
+transition: 0.2s;
+}
+
+
+body div.olay {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2579838a;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    left: 0;
+    bottom: 0;
+    
+}
+
+body div.photo{
+border: 2px solid var(--red-color);
+border-radius: 30px;
+background-color: var(--dark-color);
+width: 80%;
+height: 80%;
+transition: 1s;
+z-index: 1001;
+}
+
+
+/* end our work  */
+
+
+
+/* start description  */
+
+.stuff .description {
+    max-width: 700px;
+}
+
+
+
+
+/* end description  */
+
+
+
+/* start our team  */
+
+.team {
+    background-color: var(--section-color);
+}
+.team h2 {
+    color: var(--yellow-color);
+}
+.team .box h4 {
+    background-color: var(--green-color);
+}
+
+
+.team .box:hover {
+    border: 1px solid var(--green-color);
+    cursor: pointer;
+    transform: translate(2px, 2px);
+
+}
+
+/* end our team  */
+/* START PROJECT  */
+
+.project {
+    background-color: var(--dark-color);
+}
+/* END PROJECT  */
+
+
+/* start subscribe */
+
+.subscribe {
+    background-color: var(--yellow-color);
+}
+
+.subscribe form input {
+    border: none;
+    border-bottom: 1px solid white;
+}
+.subscribe ::placeholder {
+    color: white;
+}
+
+.subscribe input[type="submit"]{
+    background-color: var(--dark-color);
+    color: var(--yellow-color);
+}
+/* end subscribe */
+
+/* start footer  */
+
+.footer {
+    background-color: var(--dark-color);
+
+}
+.footer .copy-right > span {
+    color: var(--green-color);
+}
+
+.footer .copy-right div span {
+    color: var(--yellow-color);
+}
+
+.footer .contact ul svg {
+    width: 20px;
+    height: 20px;
+
+}
+
+
+.footer .facebook {
+    background-color: #1877f2;
+}
+
+.footer .twitter {
+    background-color: #1da1f2;
+}
+
+.footer .youtube{
+    background-color: #ff0000;
+}
+.footer .linkedin{
+    background-color: #0077b5;
+}
+
+
+
+.footer .facebook:hover{
+    transform: translate(2px, 2px);
+}
+.footer .twitter:hover{
+    transform: translate(2px, 2px);
+}
+.footer .youtube:hover{
+    transform: translate(2px, 2px);
+}
+.footer .linkedin:hover {
+    transform: translate(2px, 2px);
+}
+/* end footer  */
+
+
+.blog .row .blog-img:hover {
+    border: 1px solid var(--green-color);
+    cursor: pointer;
+    transform: translate(2px, 2px);
+}
+
